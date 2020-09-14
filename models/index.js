@@ -14,4 +14,8 @@ Pet.belongsTo(User, {
     foreignKey: `user_id`
 });
 
+User.hasMany(Pet, {
+    foreignKey: 'user_id'
+});
+
 module.exports = { User, Post, Pet };
