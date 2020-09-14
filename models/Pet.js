@@ -19,6 +19,10 @@ Pet.init(
             type: DataTypes.INTEGER,
             allowNull: false
         },
+        info: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
         breed: {
             type: DataTypes.STRING,
             allowNull: true
@@ -30,6 +34,10 @@ Pet.init(
         sex: {
             type: DataTypes.STRING,
             allowNull: false
+        },
+        neutered: {
+            type: DataTypes.STRING,
+            allowNull:false
         },
         house_trained: {
             type: DataTypes.BOOLEAN,
