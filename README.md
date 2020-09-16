@@ -17,6 +17,7 @@ First use the *sign up* button to create a profile. From there, you may add a pe
 ## Framework's Used
 
 -Bootstrap
+<br/>
 -JQuery
 
 ## Deployment
