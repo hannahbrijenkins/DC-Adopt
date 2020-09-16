@@ -28,7 +28,7 @@ router.get(`/`, (req,res) => {
             const pets = dbPetData.map(pet => pet.get({ plain: true }));
             res.render(`homepage`, {
                 pets,
-                loggedIn: req.session.loggin
+                loggedIn: req.session.loggedIn
             });
         })
         .catch(err => {
@@ -43,6 +43,19 @@ router.get(`/login`, (req, res) => {
     }
 
     res.render(`login`);
+});
+
+router.get(`/signup`, (req, res) => {
+    if(req.session.loggedIn) {
+        res.redirect(`/`);
+        return;
+    }
+
+    res.render(`signup`);
+});
+
+router.get(`/newpet`, (req, res) => {
+    res.render(`pet-form`);
 });
 
 router.get(`/pets/:id`, (req, res) => {
