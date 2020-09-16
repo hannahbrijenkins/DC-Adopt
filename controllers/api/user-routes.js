@@ -1,10 +1,43 @@
 const router = require("express").Router();
 const { User } = require("../../models");
 
+router.get("/", (req, res) => {
+    User.findAll({
+        attributes: {
+            exclude: ["password"]
+        }
+    }).then(dbUserData => res.json(dbUserData))
+        .catch(err => res.status(500).json(err));
+})
+
+router.get("/:id", (req, res) => {
+    User.findOne({
+        attributes: {
+            exclude: ["password"]
+        },
+        where: {
+            id: req.params.id
+        },
+        include: [
+            {
+                model: Post,
+                attributes: ["id", "title", "img_url", "post_description", "created_at"]
+            }
+        ]
+    }).then(dbUserData => {
+        if (!dbUserData) {
+            res.status(404).json({ message: "No User Was Found Containing This ID" });
+            return;
+        }
+        res.json(dbUserData);
+    }).catch(err => res.status(500).json(err));
+})
+
 router.post("/", (req, res) => {
     User.create({
         username: req.body.username,
-        password: req.body.password
+        password: req.body.password,
+        email: req.body.email
     })
         .then(dbUserData => {
             req.session.save(() => {
