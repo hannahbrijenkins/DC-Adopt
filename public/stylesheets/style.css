@@ -34,6 +34,11 @@
 
 }
 
+.pad {
+  padding-left: 50px;
+  padding-bottom: 15px;
+}
+
 #parent > *:first-child {
     margin-top: 0;
 }
@@ -42,6 +47,10 @@
     margin-bottom: 50px;
 }
 
+.gender {
+  padding-left: 20px;
+  padding-right: 20px;
+}
 
 .main-title {
     text-align: center;
@@ -71,7 +80,9 @@ h2 {
     color: #cccccc;
   }
   
-  
+  .post-pet {
+    font-size: 24px;
+  }
   
   /* STRUCTURE */
   

@@ -1,0 +1,48 @@
+    <section>
+        <div class="wrapper fadeInDown">
+            <div id="formContent">
+                <!-- Tabs Titles -->
+                <h2 class="post-pet text-bold text-dark">Create New Post</h2>
+                <!-- Login Form -->
+                <form id="newPetInfo">
+                    <input type="text" id="petName" class="fadeIn second" name="petname" placeholder="Enter Pet Name">
+                    <input type="text" id="petAge" class="fadeIn second" name="petage" placeholder="Enter Pet Age">
+                    <input type="text" id="petInfo" class="fadeIn second" name="petdesc"
+                        placeholder="Enter a Description of Pet">
+                    <input type="text" id="breed" class="fadeIn second" name="petbreed"
+                        placeholder="Enter Breed of Pet">
+                    <input type="text" id="healthCond" class="fadeIn second" name="health"
+                        placeholder="Enter Any Health Conditions of Pet">
+
+                    <div class="form-check d-flex justify-content-center p-1">
+                        <div class="gender">
+                            <input type="radio" class="form-check-input" name="gender" value="male" id="male">
+                            <label class="form-check-label mx-auto" for="male">Male</label>
+                        </div>
+                        <div class="gender">
+                            <input type="radio" class="form-check-input" name="gender" value="female" id="female">
+                            <label class="form-check-label mx-auto" for="female">Female</label>
+                        </div>
+                    </div>
+
+                    <div class="form-check mb-2">
+                        <input type="checkbox" class="form-check-input" id="neutered">
+                        <label class="form-check-label " for="filledInCheckbox">Neutered/Spayed?</label>
+                    </div>
+
+                    <div class="form-check mb-2">
+                        <input type="checkbox" class="form-check-input" id="houseTrained">
+                        <label class="form-check-label " for="filledInCheckbox">Housetrained?</label>
+                    </div>
+                    
+                    <div class="justify-content-center">
+                        <h3>Upload Image of Pet</h3>
+                        <form method="post" enctype="multipart/form-data" action="/upload">
+                            <input class="pad" type="file" name="file">
+                            <input type="submit" value="Submit">
+                        </form>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>

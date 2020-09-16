@@ -40,7 +40,7 @@ Pet.init(
             allowNull: false
         },
         neutered: {
-            type: DataTypes.STRING,
+            type: DataTypes.BOOLEAN,
             allowNull: false
         },
         house_trained: {
