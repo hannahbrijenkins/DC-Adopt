@@ -31,10 +31,6 @@ Pet.init(
             type: DataTypes.STRING,
             allowNull: true
         },
-        img_url: {
-            type: DataTypes.STRING,
-            allowNull: true
-        },
         sex: {
             type: DataTypes.STRING,
             allowNull: false
