@@ -12,6 +12,7 @@ We understand how difficult it can be to have to let go of a pet, therefore we d
 ## How to Use
 
 To use this web app, run *npm start* to start your server with local host. You must create a *.env* file with your SQL log in information and database name to be able to use this application.
+First use the *sign up* button to create a profile. From there, you may add a pet, or save listed pets to your favorites. You may use the log in form to go back and update or view saved pets.
 
 ## Framework's Used
 
@@ -19,6 +20,8 @@ To use this web app, run *npm start* to start your server with local host. You m
 -JQuery
 
 ## Deployment
+
+[Heroku Deployment](https://dc-adopt.herokuapp.com/)
 
 ## Authors
 **Junior Escobar** -
