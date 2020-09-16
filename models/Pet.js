@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require(`sequelize`);
 const sequelize = require(`../config/connection`);
 
-class Pet extends Model {}
+class Pet extends Model { }
 
 Pet.init(
     {
@@ -31,13 +31,17 @@ Pet.init(
             type: DataTypes.STRING,
             allowNull: true
         },
+        img_url: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
         sex: {
             type: DataTypes.STRING,
             allowNull: false
         },
         neutered: {
             type: DataTypes.STRING,
-            allowNull:false
+            allowNull: false
         },
         house_trained: {
             type: DataTypes.BOOLEAN,
@@ -46,6 +50,13 @@ Pet.init(
         adoption_fee: {
             type: DataTypes.INTEGER,
             allowNull: true
+        },
+        user_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: `user`,
+                key: `id`
+            }
         }
     },
     {
