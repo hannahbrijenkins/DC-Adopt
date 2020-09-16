@@ -1,0 +1,13 @@
+{{#if loggedIn}}
+<section>
+    <h2>Your Posts</h2>
+    <ul class="">
+        {{#each posts as |post|}}
+        <li>
+            {{> pet-info post}}
+            <a href="/dashboard/edit/{{pet.id}}" class="">Edit Post</a>
+        </li>
+        {{/each}}
+    </ul>
+</section>
+{{/if}}
