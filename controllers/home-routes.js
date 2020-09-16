@@ -1,13 +1,21 @@
 const router = require(`express`).Router();
-const { Post, User, Pet } = require(`../models`);
+const { User, Pet } = require(`../models`);
 
 router.get(`/`, (req,res) => {
-    Post.findAll({
+    Pet.findAll({
         attributes: [
             "id",
-            "title",
+            "name",
+            "age",
+            "info",
+            "breed",
+            "health_conditions",
             "img_url",
-            "post_description",
+            "sex",
+            "neutered",
+            "house_trained",
+            "adoption_fee",
+            "user_id",
             "created_at"
         ],
         include: [
@@ -17,10 +25,10 @@ router.get(`/`, (req,res) => {
             }
         ]
     })
-        .then(dbPostData => {
-            const posts = dbPostData.map(post => post.get({ plain: true }));
+        .then(dbPetData => {
+            const pets = dbPetData.map(pet => pet.get({ plain: true }));
             res.render(`homepage`, {
-                posts,
+                pets,
                 loggedIn: req.session.loggin
             });
         })
@@ -38,16 +46,24 @@ router.get(`/login`, (req, res) => {
     res.render(`login`);
 });
 
-router.get(`/post/:id`, (req, res) => {
-    Post.findOne({
+router.get(`/pets/:id`, (req, res) => {
+    Pet.findOne({
         where: {
             id: req.params.id
         },
         attributes: [
             "id",
-            "title",
+            "name",
+            "age",
+            "info",
+            "breed",
+            "health_conditions",
             "img_url",
-            "post_description",
+            "sex",
+            "neutered",
+            "house_trained",
+            "adoption_fee",
+            "user_id",
             "created_at"
         ],
         include: [
@@ -57,16 +73,16 @@ router.get(`/post/:id`, (req, res) => {
             }
         ]
     })
-    .then(dbPostData => {
-        if(!dbPostData) {
-            res.status(404).json({ message: `No Post Was Found With This ID` });
+    .then(dbPetData => {
+        if(!dbPetData) {
+            res.status(404).json({ message: `No Pet Was Found With This ID` });
             return;
         }
 
-        const post = dbPostData.get({ plain: true });
+        const pet = dbPetData.get({ plain: true });
 
         res.render(`single-post`, {
-            post,
+            pet,
             loggedIn: req.session.loggedIn
         });
     })

@@ -6,7 +6,19 @@ const withAuth = require("../../utils/auth");
 router.get("/", (req, res) => {
     Pet.findAll({
         attributes: [
-            "id", "name", "age", "info", "breed", "health_conditions", "img_url", "sex", "neutered", "house_trained", "adoption_fee", "user_id", "created_at"
+            "id",
+            "name",
+            "age",
+            "info",
+            "breed",
+            "health_conditions",
+            "img_url",
+            "sex",
+            "neutered",
+            "house_trained",
+            "adoption_fee",
+            "user_id",
+            "created_at"
         ],
         include: [{
             model: User,
@@ -24,7 +36,19 @@ router.get("/:id", (req, res) => {
             id: req.params.id
         },
         attributes: [
-            "id", "name", "age", "info", "breed", "health_conditions", "img_url", "sex", "neutered", "house_trained", "adoption_fee", "user_id", "created_at"
+            "id",
+            "name",
+            "age",
+            "info",
+            "breed",
+            "health_conditions",
+            "img_url",
+            "sex",
+            "neutered",
+            "house_trained",
+            "adoption_fee",
+            "user_id",
+            "created_at"
         ],
         include: [{
             model: User,
