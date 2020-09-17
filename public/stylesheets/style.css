@@ -67,7 +67,11 @@
 
 .deep-shadow {
     box-shadow: rgba(0, 0, 0, 0.45) 0 10px 10px -5px;
+}
 
+#thumbnail {
+  width: 20%;
+  margin-top: 10px;
 }
 
 h2 {

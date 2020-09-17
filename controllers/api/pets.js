@@ -89,14 +89,14 @@ router.post("/", withAuth, (req, res) => {
 });
 
 router.put(`/add`, withAuth, (req, res) => {
-    if(req.session.loggedIn) {
+    if (req.session.loggedIn) {
         Pet.add({ ...req.body, user_id: req.session.userId }, { SavedPet, User, Pet })
             .then(updatedSavedPetData => res.json(updatedSavedPetData))
             .catch(err => res.status(400).json(err));
     }
 });
 
-router.put("/:id", withAuth, (req, res) => {
+router.put("/:id", (req, res) => {
     Pet.update(req.body, {
         where: {
             id: req.params.id

@@ -37,7 +37,10 @@
                     <div class="justify-content-center">
                         <h3>Upload Image of Pet</h3>
                         <form method="post" enctype="multipart/form-data" action="/upload">
-                            <input class="pad" type="file" name="file">
+                            <input class="pad" type="file" name="file" accept="image/" onchange="showImage(this)">
+                            <br>
+                            <img id="thumbnail" src="" alt="image"/>
+                            <br>
                             <input type="submit" value="Submit">
                         </form>
                     </div>
@@ -46,3 +49,4 @@
         </div>
     </section>
     <script src="/js/pet-form.js"></script>
+    <script src="/js/showImage.js"></script>
