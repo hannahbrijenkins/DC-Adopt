@@ -1,10 +1,10 @@
 <h1 class="main-title bold-text">Adoptable Pets</h1>
-<ol class="post-list">
+<ul class="post-list">
   {{#each pets as |pet|}}
   <li>
     {{> pet-info pet }}
   </li>
   {{/each}}
-</ol>
+</ul>
 
 <script src="/js/save-pet.js"></script>

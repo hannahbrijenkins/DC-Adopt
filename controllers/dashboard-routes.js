@@ -30,7 +30,7 @@ router.get(`/`, withAuth, (req, res) => {
     })
         .then(dbPetData => {
             const pets = dbPetData.map(pet => pet.get({ plain: true }));
-            res.render(`dashboard`, { posts, loggedIn: req.session.loggedIn });
+            res.render(`dashboard`, { pets, loggedIn: req.session.loggedIn });
         })
         .catch(err => {
             res.status(500).json(err);
@@ -75,6 +75,8 @@ router.get(`/edit/:id`, withAuth, (req, res) => {
             res.render(`editpost`, {
                 pet,
                 loggedIn: req.session.userId
-            })
-        })
-})
+            });
+        });
+});
+
+module.exports = router;
