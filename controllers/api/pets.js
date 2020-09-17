@@ -74,7 +74,7 @@ router.post("/", withAuth, (req, res) => {
         neutered: req.body.neutered,
         house_trained: req.body.house_trained,
         adoption_fee: req.body.adoption_fee,
-        userId: req.session.userId
+        user_id: req.session.userId
     })
         .then(newPet => {
             res.json(newPet);
