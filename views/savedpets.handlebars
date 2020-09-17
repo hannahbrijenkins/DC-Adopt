@@ -1,0 +1,12 @@
+{{#if loggedIn}}
+<section>
+    <h2>Saved Pets</h2>
+    <ul>
+        {{#each pets as |post|}}
+        <li>
+            {{> pet-info post}}
+        </li>
+        {{/each}}
+    </ul>
+</section>
+{{/if}}
