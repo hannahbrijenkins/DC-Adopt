@@ -5,7 +5,7 @@
         {{#each pets as |pet|}}
         <li>
             {{> pet-info pet}}
-            <a href="/dashboard/edit/{{pet.id}}" class="">Edit Post</a>
+            <a href="/dashboard/edit/{{pet.id}}" id="editBtn">Edit Post</a>
             <a href="/dashboard/delete/{{pet.id}}" id="removeBtn">Remove</a>
         </li>
         {{/each}}
