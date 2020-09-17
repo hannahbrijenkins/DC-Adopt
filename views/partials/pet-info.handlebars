@@ -1,66 +1,65 @@
-<section class="adopt-list" id="parent">
-    <div class="card mx-auto w-50">
-        <h5 class="card-header bg-orange text-white bold-text" id="petName">{{name}}, {{age}}</h5>
-        <div class="card-body">
-            <h5 class="card-title bold-text">{{breed}}, {{sex}}</h5>
-            <p class="card-text">
-                {{info}}
-            </p>
+<div class="card mx-auto pet-info">
+    <h5 class="card-header bg-orange text-white bold-text" id="petName">{{name}}, {{age}}</h5>
+    <div class="card-body">
+        <h5 class="card-title bold-text">{{breed}}, {{sex}}</h5>
+        <p class="card-text">
+            {{info}}
+        </p>
 
-            <div class="container border">
-                <div class="row justify-content-md-left">
-                    <div class="col col bold-text">
-                        Health Conditions:
-                    </div>
-                    <div class="col col">
-                        {{health_conditions}}
-                    </div>
+        <div class="container border">
+            <div class="row justify-content-md-left">
+                <div class="col col bold-text">
+                    Health Conditions:
                 </div>
-                <div class="row justify-content-md-left">
-                    <div class="col col bold-text">
-                        Spayed/Neutered:
-                    </div>
-                    <div class="col col ">
-                        <!-- checkmark if true, "x" if false -->
-                        {{#if neutered}}
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-                            <path fill-rule="evenodd"
-                                d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z">
-                            </path>
-                        </svg>
-                        {{else}}
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-                            <path fill-rule="evenodd"
-                                d="M3.72 3.72a.75.75 0 011.06 0L8 6.94l3.22-3.22a.75.75 0 111.06 1.06L9.06 8l3.22 3.22a.75.75 0 11-1.06 1.06L8 9.06l-3.22 3.22a.75.75 0 01-1.06-1.06L6.94 8 3.72 4.78a.75.75 0 010-1.06z">
-                            </path>
-                        </svg>
-                        {{/if}}
-                    </div>
-                </div>
-                <div class="row justify-content-md-left">
-                    <div class="col col bold-text">
-                        Housetrained:
-                    </div>
-                    <div class="col col">
-                        <!-- checkmark if true, "x" if false -->
-                        {{#if house_trained}}
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-                            <path fill-rule="evenodd"
-                                d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z">
-                            </path>
-                        </svg>
-                        {{else}}
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-                            <path fill-rule="evenodd"
-                                d="M3.72 3.72a.75.75 0 011.06 0L8 6.94l3.22-3.22a.75.75 0 111.06 1.06L9.06 8l3.22 3.22a.75.75 0 11-1.06 1.06L8 9.06l-3.22 3.22a.75.75 0 01-1.06-1.06L6.94 8 3.72 4.78a.75.75 0 010-1.06z">
-                            </path>
-                        </svg>
-                        {{/if}}
-                    </div>
+                <div class="col col">
+                    {{health_conditions}}
                 </div>
             </div>
-            <div>
-                <a id="savePet" class="btn btn-outline-danger p-2">Save</a>
+            <div class="row justify-content-md-left">
+                <div class="col col bold-text">
+                    Spayed/Neutered:
+                </div>
+                <div class="col col ">
+                    <!-- checkmark if true, "x" if false -->
+                    {{#if neutered}}
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+                        <path fill-rule="evenodd"
+                            d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z">
+                        </path>
+                    </svg>
+                    {{else}}
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+                        <path fill-rule="evenodd"
+                            d="M3.72 3.72a.75.75 0 011.06 0L8 6.94l3.22-3.22a.75.75 0 111.06 1.06L9.06 8l3.22 3.22a.75.75 0 11-1.06 1.06L8 9.06l-3.22 3.22a.75.75 0 01-1.06-1.06L6.94 8 3.72 4.78a.75.75 0 010-1.06z">
+                        </path>
+                    </svg>
+                    {{/if}}
+                </div>
+            </div>
+            <div class="row justify-content-md-left">
+                <div class="col col bold-text">
+                    Housetrained:
+                </div>
+                <div class="col col">
+                    <!-- checkmark if true, "x" if false -->
+                    {{#if house_trained}}
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+                        <path fill-rule="evenodd"
+                            d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z">
+                        </path>
+                    </svg>
+                    {{else}}
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+                        <path fill-rule="evenodd"
+                            d="M3.72 3.72a.75.75 0 011.06 0L8 6.94l3.22-3.22a.75.75 0 111.06 1.06L9.06 8l3.22 3.22a.75.75 0 11-1.06 1.06L8 9.06l-3.22 3.22a.75.75 0 01-1.06-1.06L6.94 8 3.72 4.78a.75.75 0 010-1.06z">
+                        </path>
+                    </svg>
+                    {{/if}}
+                </div>
             </div>
         </div>
+        <div class="align-content-middle">
+            {{!-- <a id="savePet" class="btn btn-outline-primary p-1 m-2">Save</a> --}}
+        </div>
     </div>
+</div>

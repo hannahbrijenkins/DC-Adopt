@@ -1,16 +1,12 @@
 {{#if loggedIn}}
 <section>
-    <h2>Your Posts</h2>
-    <ul class="">
+<h1 class="main-title bold-text">Your Uploaded Pets</h1>
+    <section class="adopt-list" id="parent">
         {{#each pets as |pet|}}
-        <li>
-            {{> pet-info pet}}
-            <a href="/dashboard/edit/{{pet.id}}" id="editBtn">Edit Post</a>
-           
-        </li>
+        {{> pet-info pet}}
+        <a class="mx-auto" href="/dashboard/edit/{{pet.id}}" id="editBtn">Edit Post</a>
         {{/each}}
-    </ul>
+    </section>
 </section>
 
 {{/if}}
-

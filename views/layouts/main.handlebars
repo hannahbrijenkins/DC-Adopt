@@ -24,7 +24,7 @@
     <img class="my-0 mr-md-auto font-weight-normal" width="150" alt="DC Adopt logo" src="/images/logo.png"></img>
     <nav class="my-2 my-md-0 mr-md-3">
       <a class="p-2 text-dark" href="/">Home</a>
-      <a class="p-2 text-dark" href="/savedpets">Saved Pets</a>
+      {{!-- <a class="p-2 text-dark" href="/savedpets">Saved Pets</a> --}}
       {{#if loggedIn}}
       <a id="logout" class="btn btn-outline-danger p-2" href="/">Log Out</a>
       <a class="btn btn-outline-primary p-2" href="/dashboard">Dashboard</a>
@@ -53,7 +53,7 @@
 
 
     <!-- Footer -->
-    <footer class="bg-dark p-3">
+    <footer class="bg-dark p-3 sticky-bottom">
       <div>
         <p class="text-light text-center">Copyright © DC Adopt</p>
       </div>
