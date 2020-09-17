@@ -9,8 +9,20 @@ async function newPetForm(event) {
     const breed = document.querySelector('#breed').value.trim();
     const health_conditions = document.querySelector('#healthCond').value.trim();
     const sex = document.querySelector('input[name="gender"]:checked').value.trim();
-    const neutered = document.querySelector('#neutered').value.trim();
-    const house_trained = document.querySelector('#houseTrained').value.trim();
+    let neutered = document.querySelector('#neutered').value.trim();
+    let house_trained = document.querySelector('#houseTrained').value.trim();
+
+    if(neutered === 'on') {
+        neutered = true;
+    } else {
+        neutered = false;
+    }
+
+    if(house_trained === 'on') {
+        house_trained = true;
+    } else {
+        house_trained = false;
+    }
 
     const response = await fetch('/api/pets/', {
         method: 'POST',
