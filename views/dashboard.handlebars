@@ -6,9 +6,11 @@
         <li>
             {{> pet-info pet}}
             <a href="/dashboard/edit/{{pet.id}}" id="editBtn">Edit Post</a>
-            <a href="/dashboard/delete/{{pet.id}}" id="removeBtn">Remove</a>
+            <a id="removeBtn">Remove</a>
         </li>
         {{/each}}
     </ul>
 </section>
+<script src="js/remove-pet.js"></script>
 {{/if}}
+
