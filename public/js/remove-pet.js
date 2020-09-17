@@ -10,7 +10,7 @@ async function removePetFromProfile(event) {
         headers: { 'Content-Type': 'application/json' }
     });
 
-    if (response.ok) {
+    if (remove.ok) {
         document.location.replace(`/dashboard`);
     } else {
         alert(response.statusText);
