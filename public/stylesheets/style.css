@@ -34,6 +34,10 @@
 
 }
 
+.pet-info {
+  width: 50%;
+}
+
 .pad {
   padding-left: 50px;
   padding-bottom: 15px;
@@ -338,7 +342,9 @@ h2 {
     width: 100%;
   }
   
-  
+  .sticky-bottom {
+    position: sticky;
+  }
   
   /* OTHERS */
   
@@ -350,3 +356,18 @@ h2 {
     width:60%;
   }
   
+  @media only screen and (max-width: 900px) {
+    .pet-info {
+     width: 75%;
+    }
+  }
+
+  @media only screen and (max-width: 500px) {
+    .pet-info {
+     width: 90%;
+    }
+
+    .bgimage h5 {
+      font-size: 45px;
+    }
+  }
