@@ -26,7 +26,7 @@ async function editFormHandler(event) {
         house_trained = false;
     }
 
-    const response = await fetch(`/api/posts/${petid}`, {
+    const response = await fetch(`/api/pets/${petid}`, {
         method: `PUT`,
         body: JSON.stringify({
             name,
