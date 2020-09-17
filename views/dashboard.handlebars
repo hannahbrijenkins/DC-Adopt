@@ -2,9 +2,9 @@
 <section>
     <h2>Your Posts</h2>
     <ul class="">
-        {{#each pets as |post|}}
+        {{#each pets as |pet|}}
         <li>
-            {{> pet-info post}}
+            {{> pet-info pet}}
             <a href="/dashboard/edit/{{pet.id}}" class="">Edit Post</a>
         </li>
         {{/each}}
