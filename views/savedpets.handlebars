@@ -1,12 +1,10 @@
 {{#if loggedIn}}
 <section>
-    <h2>Saved Pets</h2>
-    <ul>
+    <h2 class="main-title bold-text">Saved Pets</h2>
+    <section class="adopt-list" id="parent">
         {{#each pets as |pet|}}
-        <li>
             {{> pet-info pet}}
-        </li>
         {{/each}}
-    </ul>
+    </section>
 </section>
 {{/if}}
