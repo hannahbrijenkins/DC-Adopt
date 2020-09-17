@@ -4,7 +4,7 @@
                 <!-- Tabs Titles -->
                 <h2 class="post-pet text-bold text-dark">Create New Post</h2>
                 <!-- Login Form -->
-                <form id="newPetInfo">
+                <form id="editPetInfo">
                     <input type="text" id="petName" class="fadeIn second" name="petname" placeholder="Enter Pet Name" value={{pet.name}}>
                     <input type="text" id="petAge" class="fadeIn second" name="petage" placeholder="Enter Pet Age" value={{pet.age}}>
                     <input type="text" id="petInfo" class="fadeIn second" name="petdesc" placeholder="Enter a Description of Pet" value={{pet.info}}>
@@ -34,7 +34,7 @@
                         <h3>Upload Image of Pet</h3>
                         <form method="post" enctype="multipart/form-data" action="/upload">
                             <input class="pad" type="file" name="file">
-                            <input type="submit" value="Submit" id="editBtn">
+                            <input type="submit" value="Submit">
                         </form>
                     </div>
                 </form>

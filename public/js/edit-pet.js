@@ -50,4 +50,4 @@ async function editFormHandler(event) {
     }
 }
 
-document.querySelector(`#editBtn`).addEventListener(`click`, editFormHandler);
+document.querySelector(`#editPetInfo`).addEventListener(`submit`, editFormHandler);
