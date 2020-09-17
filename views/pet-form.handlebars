@@ -4,7 +4,7 @@
                 <!-- Tabs Titles -->
                 <h2 class="post-pet text-bold text-dark">Create New Post</h2>
                 <!-- Login Form -->
-                <form id="newPetInfo">
+                <form id="newPetInfo" method="POST" enctype="multipart/form-data" action="/api/pets/upload">
                     <input type="text" id="petName" class="fadeIn second" name="petname" placeholder="Enter Pet Name">
                     <input type="text" id="petAge" class="fadeIn second" name="petage" placeholder="Enter Pet Age">
                     <input type="text" id="petInfo" class="fadeIn second" name="petdesc"
@@ -36,13 +36,11 @@
                     
                     <div class="justify-content-center">
                         <h3>Upload Image of Pet</h3>
-                        <form method="post" enctype="multipart/form-data" action="/upload">
-                            <input class="pad" type="file" name="file" accept="image/" onchange="showImage(this)">
-                            <br>
-                            <img id="thumbnail" src="" alt="image"/>
-                            <br>
-                            <input type="submit" value="Submit">
-                        </form>
+                        <input class="pad" type="file" name="petImage" accept="image/" onchange="showImage(this)">
+                        <br>
+                        <img id="thumbnail" src="" alt="image"/>
+                        <br>
+                        <input type="submit" value="Submit">
                     </div>
                 </form>
             </div>

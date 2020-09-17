@@ -1,6 +1,17 @@
 const router = require("express").Router();
 const { Pet, User, SavedPet } = require("../../models/");
+const multer = require(`multer`);
 const withAuth = require("../../utils/auth");
+const storage = multer.diskStorage({
+    destination: `./public/images`,
+    filename: function(req, file, cb){
+        cb(null, file.fieldname + `-` + Date.now() +
+        path.extname(file.originalname));
+    }
+});
+const upload = multer({
+    storage: storage
+}).single(`petImage`);
 
 router.get("/", (req, res) => {
     Pet.findAll({
@@ -86,6 +97,18 @@ router.post("/", withAuth, (req, res) => {
             console.log(err);
             res.status(500).json(err);
         });
+});
+
+router.post(`/upload`, (req, res) => {
+    upload(req, res, (err) => {
+        if(err) {
+            res.status(500).json(err);
+            return;
+        } else {
+            console.log(req.file);
+            res.send(`hello`);
+        }
+    });
 });
 
 router.put(`/add`, withAuth, (req, res) => {
