@@ -21,7 +21,7 @@ router.get("/", (req, res) => {
         include: [
             {
                 model: User,
-                attributes: ["username"]
+                attributes: ["username", "email"]
             }
         ]
     }).then(dbPetData => res.json(dbPetData))
@@ -52,7 +52,7 @@ router.get("/:id", (req, res) => {
         include: [
             {
                 model: User,
-                attributes: ["username"]
+                attributes: ["username", "email"]
             }
         ]
     }).then(dbPetData => {
