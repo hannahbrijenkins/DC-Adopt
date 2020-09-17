@@ -7,7 +7,7 @@ Sometimes we find ourselves in a situation where we have to make a difficult dec
 Our web application allows users to create a profile, add pet information, save pets that they might be interested in adopting, view a pet owners information, and edit pet listings to provide the most current information.
 We understand how difficult it can be to have to let go of a pet, therefore we decided connecting pet owners to pet adopters will make the process much easier for everyone, including your furry friend!
 
-![screenshot of deployed web application](#)
+![screenshot of deployed web application](public/images/screenshot.jpg)
 
 ## How to Use
 
