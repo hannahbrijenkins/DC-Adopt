@@ -17,4 +17,4 @@ async function removePetFromProfile(event) {
     }
 }
 
-document.querySelector(`#removeBtn`).addEventListener(`submit`, removePetFromProfile);
+document.querySelector(`#removeBtn`).addEventListener(`click`, removePetFromProfile);
