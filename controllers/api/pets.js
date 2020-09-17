@@ -23,7 +23,7 @@ router.get("/", (req, res) => {
             model: User,
             attributes: ["username"]
         }]
-    }).then(dbPostData => res.json(dbPostData))
+    }).then(dbPetData => res.json(dbPetData))
         .catch(err => {
             res.status(500).json(err);
     });
@@ -52,24 +52,35 @@ router.get("/:id", (req, res) => {
             model: User,
             attributes: ["username"]
         }]
-    }).then(dbPostData => {
-        if (!dbPostData) {
+    }).then(dbPetData => {
+        if (!dbPetData) {
             res.status(404).json({
                 message: "No Pet Was Found With This ID."
             });
             return;
         }
-        res.json(dbPostData)
+        res.json(dbPetData)
     })
 })
 
 router.post("/", withAuth, (req, res) => {
-    const body = req.body;
-    Pet.create({ ...body, userId: req.session.userId })
-        .then(newPost => {
-            res.json(newPost);
+    Pet.create({
+        name: req.body.name,
+        age: req.body.age,
+        info: req.body.info,
+        breed: req.body.breed,
+        health_conditions: req.body.health_conditions,
+        sex: req.body.sex,
+        neutered: req.body.neutered,
+        house_trained: req.body.house_trained,
+        adoption_fee: req.body.adoption_fee,
+        userId: req.session.userId
+    })
+        .then(newPet => {
+            res.json(newPet);
         })
         .catch(err => {
+            console.log(err);
             res.status(500).json(err);
         });
 });

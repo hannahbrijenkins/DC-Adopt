@@ -55,7 +55,9 @@ router.get(`/signup`, (req, res) => {
 });
 
 router.get(`/newpet`, (req, res) => {
-    res.render(`pet-form`);
+    res.render(`pet-form`, {
+        loggedIn: req.session.loggedIn
+    });
 });
 
 router.get(`/pets/:id`, (req, res) => {
