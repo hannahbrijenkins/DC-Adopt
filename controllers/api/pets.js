@@ -1,4 +1,3 @@
-
 const router = require("express").Router();
 const { Pet, User, SavedPet } = require("../../models/");
 const withAuth = require("../../utils/auth");
@@ -28,7 +27,7 @@ router.get("/", (req, res) => {
     }).then(dbPetData => res.json(dbPetData))
         .catch(err => {
             res.status(500).json(err);
-    });
+        });
 })
 
 router.get("/:id", (req, res) => {

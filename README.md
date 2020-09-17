@@ -17,6 +17,7 @@ First use the *sign up* button to create a profile. From there, you may add a pe
 ## Framework's Used
 
 -Bootstrap
+<br/>
 -JQuery
 
 ## Deployment
@@ -24,7 +25,10 @@ First use the *sign up* button to create a profile. From there, you may add a pe
 [Heroku Deployment](https://dc-adopt.herokuapp.com/)
 
 ## Authors
-**Junior Escobar** -
+**Junior Escobar** - [junioresc](https://github.com/junioresc)
+<br/>
 **Jesus Molina** - [Kos-MovV4](https://github.com/Kos-MosV4)
+<br/>
 **Hannah Jenkins** - [hannahbrijenkins](https://github.com/hannahbrijenkins)
-**Donell Torres** -
+<br/>
+**Donell Torres** - [donellt](https://github.com/donellt)
