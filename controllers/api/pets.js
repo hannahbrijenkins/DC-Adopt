@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Pet, User } = require("../../models/");
+const { Pet, User, SavedPet } = require("../../models/");
 const withAuth = require("../../utils/auth");
 
 router.get("/", (req, res) => {
@@ -18,10 +18,12 @@ router.get("/", (req, res) => {
             "user_id",
             "created_at"
         ],
-        include: [{
-            model: User,
-            attributes: ["username"]
-        }]
+        include: [
+            {
+                model: User,
+                attributes: ["username"]
+            }
+        ]
     }).then(dbPetData => res.json(dbPetData))
         .catch(err => {
             res.status(500).json(err);
@@ -47,10 +49,12 @@ router.get("/:id", (req, res) => {
             "user_id",
             "created_at"
         ],
-        include: [{
-            model: User,
-            attributes: ["username"]
-        }]
+        include: [
+            {
+                model: User,
+                attributes: ["username"]
+            }
+        ]
     }).then(dbPetData => {
         if (!dbPetData) {
             res.status(404).json({
@@ -82,6 +86,14 @@ router.post("/", withAuth, (req, res) => {
             console.log(err);
             res.status(500).json(err);
         });
+});
+
+router.put(`/add`, withAuth, (req, res) => {
+    if(req.session.loggedIn) {
+        Pet.add({ ...req.body, user_id: req.session.userId }, { SavedPet, User, Pet })
+            .then(updatedSavedPetData => res.json(updatedSavedPetData))
+            .catch(err => res.status(400).json(err));
+    }
 });
 
 router.put("/:id", withAuth, (req, res) => {

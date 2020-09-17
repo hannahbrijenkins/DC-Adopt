@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User, Pet } = require("../../models");
+const { User, Pet, SavedPet } = require("../../models");
 
 router.get("/", (req, res) => {
     User.findAll({
@@ -21,7 +21,26 @@ router.get("/:id", (req, res) => {
         include: [
             {
                 model: Pet,
-                attributes: ["id", "name", "age", "info", "breed", "health_conditions", "sex", "neutered", "house_trained", "adoption_fee", "user_id", "created_at"]
+                attributes: [
+                "id",
+                "name",
+                "age", 
+                "info",
+                "breed",
+                "health_conditions",
+                "sex",
+                "neutered",
+                "house_trained",
+                "adoption_fee",
+                "user_id",
+                "created_at"
+                ]
+            },
+            {
+                model: Pet,
+                attributes: [`name`],
+                through: SavedPet,
+                as: `saved_pets`
             }
         ]
     }).then(dbUserData => {
